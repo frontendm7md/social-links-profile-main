@@ -1,8 +1,10 @@
-$bg-main: hsl(0, 0%, 8%);
-$bg-card: hsl(0, 0%, 12%);
-$bg-button: hsl(0, 0%, 20%);
-$text-main: hsl(0, 0%, 100%);
-$accent: hsl(75, 94%, 47%);
+:root {
+    --bg-main: hsl(0, 0%, 8%);
+    --bg-card: hsl(0, 0%, 12%);
+    --bg-button: hsl(0, 0%, 20%);
+    --text-main: hsl(0, 0%, 100%);
+    --accent: hsl(75, 94%, 47%);
+}
 
 $spacing-sm: 10px;
 $spacing-lg: 20px;
@@ -28,92 +30,110 @@ $font-weight-lg: 700;
 }
 body{
     font-family: 'Inter', sans-serif;
-    background-color: $bg-main;
-    height: 100vh;
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    min-height: 100dvh;
     @include flex-column-center;
     overflow-x: hidden;
-    main{
-        width: 20em;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: $bg-card;
+}
+main{
+    width: 100%;
+    max-width: 16.875em;
+    padding: calc(20/16 * 1em);
+    border-radius: calc(10/16 * 1em);
+    background-color: var(--bg-card);
+    @include flex-column-center;
+    gap: $spacing-lg;
+    figure{
         @include flex-column-center;
-        gap: $spacing-lg;
-        header{
-            @include flex-column-center;
-            gap: $spacing-sm;
-            img{
-                width: 75px;
-                margin-bottom: $spacing-sm;
-                border-radius: 50%;
-            }
-            h1{
-                color: $text-main;
-                font-size: $font-size-lg;
-                font-weight: $font-weight-lg;
-            }
-            p{
-                color: $accent;
-                font-size: $font-size-sm;
-                font-weight: $font-weight-sm;
-            }
-            p:last-child{
-                color: $text-main;
-                text-align: center;
-                margin-top: $spacing-sm;
-            }
+        gap: $spacing-sm;
+        img{
+            width: calc(75/16 * 1em);
+            margin-block-end: $spacing-sm;
+            border-radius: 50%;
         }
-        nav{
-            width: 100%;
-            @include flex-column-center;
-            gap: $spacing-lg;
-            ul {
-                width: 100%;
-                @include flex-column-center;
-                gap: $spacing-sm;
-                li{
-                    width: 100%;
-                    list-style: none;
-                    @include flex-column-center;
-                    a{
-                        @include flex-column-center;
-                        text-decoration: none;
-                        background-color: $bg-button;
-                        color: $text-main;
-                        width: 100%;
-                        border: none;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        font-size: $font-size-sm;
-                        font-weight: $font-weight-md;
-                        transition: all 0.2s ease;
-                        will-change: transform;
-                        &:hover{
-                            color: $bg-main;
-                            background-color: $accent;
-                            transform: translateY(-2px);
-                        }
-                    }
-                }
-            }
+        blockquote{
+            color: var(--text-main);
+            text-align: center;
+            margin-block-start: $spacing-sm;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-sm;
         }
     }
-    .attribution{
-        color: $text-main;
-        font-size: 0.6875rem;
-        text-align: center;
-        position: absolute;
-        bottom: 10px;
+    nav{
         width: 100%;
-        a{
-            color: $accent;
+        @include flex-column-center;
+        gap: $spacing-lg;
+        ul {
+            width: 100%;
+            @include flex-column-center;
+            gap: $spacing-sm;
         }
     }
 }
+figure figcaption{
+    @include flex-column-center;
+    gap: $spacing-sm;
+    h1{
+        color: var(--text-main);
+        font-size: $font-size-lg;
+        font-weight: $font-weight-lg;
+    }
+    p{
+        color: var(--accent);
+        font-size: $font-size-sm;
+        font-weight: $font-weight-sm;
+    }
+}
+nav ul li{
+    width: 100%;
+    list-style: none;
+    @include flex-column-center;
+}
+.link{
+    @include flex-column-center;
+    text-decoration: none;
+    background-color: var(--bg-button);
+    color: var(--text-main);
+    width: 100%;
+    border: none;
+    padding: calc(10/16 * 1em) calc(20/16 * 1em);
+    border-radius: calc(5/16 * 1em);
+    cursor: pointer;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-md;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    will-change: transform;
+    &:hover{
+        color: var(--bg-main);
+        background-color: var(--accent);
+        transform: translateY(calc(-2/16 * 1em));
+    }
+    &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+    }
+}
+footer{
+    color: var(--text-main);
+    font-size: 0.6875rem;
+    text-align: center;
+    position: absolute;
+    bottom: calc(10/16 * 1em);
+    width: 100%;
+    a{
+        color: var(--accent);
+    }
+}
 
-@media only screen and (max-width: 375px){
+@media (prefers-reduced-motion: reduce) {
+    .link, .link:hover {
+        transition: none;
+        transform: none;
+    }
+}
+@media only screen and (min-width: 23.4375em) {
     main{
-        max-width: 270px;
+        max-width: 20em;
     }
 }
