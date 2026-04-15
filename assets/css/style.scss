@@ -49,14 +49,22 @@ main{
         img{
             order: 1;
             width: calc(75/16 * 1rem);
+<<<<<<< HEAD
             margin-block-end: clamp(0.5rem, 1vw, 1rem);
+=======
+            margin-block-end: clamp(0.5rem, 1.5vw, 1rem);
+>>>>>>> f99e0b8 (chore: final polish with responsive improvements and accessibility fixes)
             border-radius: 50%;
         }
         blockquote{
             order: 3;
             color: var(--text-main);
             text-align: center;
+<<<<<<< HEAD
             margin-block-start: clamp(0.5rem, 1vw, 1rem);
+=======
+            margin-block-start: clamp(0.5rem, 1.5vw, 1rem);
+>>>>>>> f99e0b8 (chore: final polish with responsive improvements and accessibility fixes)
             font-size: clamp(0.75rem, 1.5vw, $font-size-sm);
             font-weight: $font-weight-sm;
         }
@@ -101,7 +109,11 @@ nav ul li{
     color: var(--text-main);
     width: 100%;
     border: none;
+<<<<<<< HEAD
     padding: 0.6625rem 1.25rem;
+=======
+    padding: clamp(0.5rem, 1.5vw, 0.6625rem) clamp(0.5rem, 1.5vw, 1.25rem);
+>>>>>>> f99e0b8 (chore: final polish with responsive improvements and accessibility fixes)
     border-radius: 0.3125rem;
     cursor: pointer;
     font-size: clamp(0.75rem, 1.5vw, $font-size-sm);
