@@ -45,14 +45,14 @@ main figure {
 main figure img {
   order: 1;
   width: 4.6875rem;
-  margin-block-end: 0.625rem;
+  margin-block-end: clamp(0.5rem, 1vw, 1rem);
   border-radius: 50%;
 }
 main figure blockquote {
   order: 3;
   color: var(--text-main);
   text-align: center;
-  margin-block-start: 0.625rem;
+  margin-block-start: clamp(0.5rem, 1vw, 1rem);
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   font-weight: 400;
 }
@@ -135,7 +135,7 @@ footer {
   color: var(--text-main);
   font-size: 0.6875rem;
   text-align: center;
-  margin-block-start: 2rem;
+  margin-block-start: clamp(1rem, 1.5vw, 1.5rem);
   position: static;
   width: 100%;
 }

@@ -49,14 +49,14 @@ main{
         img{
             order: 1;
             width: calc(75/16 * 1rem);
-            margin-block-end: $spacing-sm;
+            margin-block-end: clamp(0.5rem, 1vw, 1rem);
             border-radius: 50%;
         }
         blockquote{
             order: 3;
             color: var(--text-main);
             text-align: center;
-            margin-block-start: $spacing-sm;
+            margin-block-start: clamp(0.5rem, 1vw, 1rem);
             font-size: clamp(0.75rem, 1.5vw, $font-size-sm);
             font-weight: $font-weight-sm;
         }
@@ -122,7 +122,7 @@ footer{
     color: var(--text-main);
     font-size: 0.6875rem;
     text-align: center;
-    margin-block-start: 2rem;
+    margin-block-start: clamp(1rem, 1.5vw, 1.5rem);
     position: static;
     width: 100%;
     a{
