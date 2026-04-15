@@ -25,34 +25,35 @@ body {
 }
 
 main {
-  width: 100%;
-  max-width: 16.875em;
-  padding: 1.25em;
-  border-radius: 0.625em;
+  width: min(90%, 20rem);
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: 0.625rem;
   background-color: var(--bg-card);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 main figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 main figure img {
-  width: 4.6875em;
-  margin-block-end: 10px;
+  order: 1;
+  width: 4.6875rem;
+  margin-block-end: 0.625rem;
   border-radius: 50%;
 }
 main figure blockquote {
+  order: 3;
   color: var(--text-main);
   text-align: center;
-  margin-block-start: 10px;
-  font-size: 14px;
+  margin-block-start: 0.625rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   font-weight: 400;
 }
 main nav {
@@ -61,7 +62,7 @@ main nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 main nav ul {
   width: 100%;
@@ -69,24 +70,26 @@ main nav ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 figure figcaption {
+  order: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 figure figcaption h1 {
   color: var(--text-main);
-  font-size: 18px;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 700;
 }
 figure figcaption p {
   color: var(--accent);
-  font-size: 14px;
+  text-align: center;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   font-weight: 400;
 }
 
@@ -105,14 +108,15 @@ nav ul li {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  text-align: center;
   background-color: var(--bg-button);
   color: var(--text-main);
   width: 100%;
   border: none;
-  padding: 0.625em 1.25em;
-  border-radius: 0.3125em;
+  padding: 0.6625rem 1.25rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   font-weight: 600;
   transition: background-color 0.2s ease, transform 0.2s ease;
   will-change: transform;
@@ -120,19 +124,19 @@ nav ul li {
 .link:hover {
   color: var(--bg-main);
   background-color: var(--accent);
-  transform: translateY(-0.125em);
+  transform: translateY(-0.125rem);
 }
 .link:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline-offset: 0.1875rem;
 }
 
 footer {
   color: var(--text-main);
   font-size: 0.6875rem;
   text-align: center;
-  position: absolute;
-  bottom: 0.625em;
+  margin-block-start: 2rem;
+  position: static;
   width: 100%;
 }
 footer a {
@@ -143,11 +147,6 @@ footer a {
   .link, .link:hover {
     transition: none;
     transform: none;
-  }
-}
-@media only screen and (min-width: 23.4375em) {
-  main {
-    max-width: 20em;
   }
 }
 
